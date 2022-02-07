@@ -1,8 +1,15 @@
-import { toast } from "react-toastify";
+//import { useState } from "react";
+//import { toast } from "react-toastify";
+
+import Navbar from "./components/Navbar";
+import "./styles/styles.css";
 
 function App() {
-  toast.info("hlo jas");
-  return <div>my portfolio</div>;
+  return (
+    <>
+      <Navbar />
+    </>
+  );
 }
 
 export default App;
