@@ -16,17 +16,31 @@
   padding: 1rem;
   display: flex;
   align-items: center;
-  height: 10vh;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .navbar .heading {
   font-size: 2rem;
 }
-.navbar .links a {
-  text-decoration: none;
-  margin: 0 1rem;
-  color: #00ff41;
+.navbar .openLinks {
+  font-size: 2rem;
 }
-.navbar .links .l_Icons {
-  display: none;
+.navbar a {
+  text-decoration: none;
+  margin: 2rem;
+  color: #00ff41;
+  text-align: center;
+  font-size: 2rem;
+}
+.navbar .l_Icons {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+}
+.navbar #cross {
+  position: fixed;
+  top: 2%;
+  right: 2%;
+  font-size: 2rem;
 }
