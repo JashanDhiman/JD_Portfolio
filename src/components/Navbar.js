@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { GoThreeBars } from "react-icons/go";
 import { ImCross } from "react-icons/im";
+import { AiFillInstagram, AiFillGithub } from "react-icons/ai";
 
 const Navbar = () => {
   const [openLink, setOpenLink] = useState(true);
@@ -13,22 +14,26 @@ const Navbar = () => {
           <div className="heading">
             <span>JD-Portfolio</span>
           </div>
-          {/*<div className="links">*/}
-          <div className="openLinks" onClick={() => setOpenLink(false)}>
+          <div className="openLinks pointer" onClick={() => setOpenLink(false)}>
             <GoThreeBars />
           </div>
         </>
       ) : (
         <div className="l_Icons">
-          <div id="cross" onClick={() => setOpenLink(true)}>
+          <div id="cross" className="pointer" onClick={() => setOpenLink(true)}>
             <ImCross />
           </div>
           <a href="/">Resume</a>
           <a href="/">AboutMe</a>
           <a href="/">Testimonial</a>
           <a href="/">ContactMe</a>
+          <a href="/">
+            <AiFillInstagram />
+          </a>
+          <a href="/">
+            <AiFillGithub />
+          </a>
         </div>
-        //</div>
       )}
     </div>
   );

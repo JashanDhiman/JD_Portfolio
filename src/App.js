@@ -1,6 +1,4 @@
-//import { useState } from "react";
-//import { toast } from "react-toastify";
-
+import Front from "./components/Front";
 import Navbar from "./components/Navbar";
 import "./styles/styles.css";
 
@@ -8,6 +6,7 @@ function App() {
   return (
     <>
       <Navbar />
+      <Front />
     </>
   );
 }
