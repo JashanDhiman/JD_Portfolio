@@ -64,7 +64,7 @@ const Navbar = () => {
             </li>
             <li className="nav_item">
               <a
-                href="#contact"
+                href="#contact "
                 className="nav_link"
                 onClick={() => linkAction()}
               >
