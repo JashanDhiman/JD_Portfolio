@@ -214,7 +214,33 @@ img {
 /* Change background header */
 
 /*==================== HOME ====================*/
-
+.home_container {
+  gap: 1rem;
+}
+.home_content {
+  grid-template-columns: 0.5fr 3fr;
+  padding-top: 3.5rem;
+  align-items: center;
+}
+.home_social {
+  display: grid;
+  grid-template-columns: max-content;
+  row-gap: 1rem;
+}
+.home_social-icon {
+  font-size: 1.25rem;
+  color: var(--first-color);
+}
+.home_social-icon:hover {
+  color: var(--first-color-alt);
+}
+.home_blob {
+  width: 200px;
+  fill: var(--first-color);
+}
+.home_blob-img {
+  width: 100%;
+}
 /*==================== BUTTONS ====================*/
 
 /*==================== ABOUT ====================*/

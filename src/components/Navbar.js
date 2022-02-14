@@ -9,6 +9,7 @@ import { BsBriefcase, BsReverseLayoutTextSidebarReverse } from "react-icons/bs";
 const Navbar = () => {
   const [showNav, setShowNav] = useState(false);
   /*==================== REMOVE MENU MOBILE ====================*/
+  //const width = window.innerWidth;
   function linkAction() {
     setShowNav(false);
   }
