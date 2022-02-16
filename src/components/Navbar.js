@@ -20,7 +20,7 @@ const Navbar = () => {
           <ul className="nav_list grid">
             <li className="nav_item">
               <a href="#home" className="nav_link" onClick={() => linkAction()}>
-                <i className="nav_icon">
+                <i className="nav_icon r_icons">
                   <BiHomeAlt />
                 </i>
                 Home
@@ -32,7 +32,7 @@ const Navbar = () => {
                 className="nav_link"
                 onClick={() => linkAction()}
               >
-                <i className="nav_icon">
+                <i className="nav_icon r_icons">
                   <AiOutlineUser />
                 </i>
                 About
@@ -44,7 +44,7 @@ const Navbar = () => {
                 className="nav_link"
                 onClick={() => linkAction()}
               >
-                <i className="nav_icon">
+                <i className="nav_icon r_icons">
                   <BsReverseLayoutTextSidebarReverse />
                 </i>
                 Resume
@@ -56,7 +56,7 @@ const Navbar = () => {
                 className="nav_link"
                 onClick={() => linkAction()}
               >
-                <i className="nav_icon">
+                <i className="nav_icon r_icons">
                   <BsBriefcase />
                 </i>
                 Services
@@ -68,7 +68,7 @@ const Navbar = () => {
                 className="nav_link"
                 onClick={() => linkAction()}
               >
-                <i className="nav_icon">
+                <i className="nav_icon r_icons">
                   <BiSend />
                 </i>
                 ContactMe
@@ -76,7 +76,7 @@ const Navbar = () => {
             </li>
           </ul>
           <i
-            className="nav_close"
+            className="nav_close r_icons"
             id="nav-Close"
             onClick={() => setShowNav(false)}
           >
@@ -90,7 +90,7 @@ const Navbar = () => {
           </a>
           <div className="nav_btns">
             <div
-              className="nav_toggle"
+              className="nav_toggle r_icons"
               id="nav-Toggle"
               onClick={() => setShowNav(true)}
             >

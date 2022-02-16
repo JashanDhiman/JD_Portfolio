@@ -4,7 +4,7 @@ import { FiGithub, FiArrowDown } from "react-icons/fi";
 import { ImLinkedin2 } from "react-icons/im";
 import { BiSend } from "react-icons/bi";
 import { CgMouse } from "react-icons/cg";
-import fav from "../styles/images/fav.jpeg";
+import fav from "../styles/images/newimg.png";
 
 const Front = () => {
   return (
@@ -15,19 +15,19 @@ const Front = () => {
             <div className="home_social">
               <a
                 href="https://github.com/JashanDhiman/"
-                className="home_social-icon"
+                className="home_social-icon r_icons"
               >
                 <FiGithub />
               </a>
               <a
                 href="https://www.linkedin.com/in/jashan-dhiman-07aa3820b/"
-                className="home_social-icon"
+                className="home_social-icon r_icons"
               >
                 <ImLinkedin2 />
               </a>
               <a
                 href="https://www.instagram.com/dhiman_jashan1/"
-                className="home_social-icon"
+                className="home_social-icon r_icons"
               >
                 <BsInstagram />
               </a>
@@ -54,7 +54,13 @@ const Front = () => {
                                     129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
                                     -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"
                   />
-                  <img className="home_blob-img" src={fav} alt="fav" />
+                  <image
+                    className="home_blob-img"
+                    x="10"
+                    y="-15"
+                    href={fav}
+                    alt="fav"
+                  />
                 </g>
               </svg>
             </div>
@@ -63,11 +69,11 @@ const Front = () => {
               <h3 className="home_subtitle">Front-End Developer</h3>
               <p className="home_description">
                 One year experience in Web Design and Knowledge, Producing
-                Quality Work
+                Quality Work.
               </p>
               <a href="#contact" className="button button-flex">
-                Contact Me{" "}
-                <i className="button_icon">
+                Contact Me
+                <i className="button_icon r_icons">
                   <BiSend />
                 </i>
               </a>
@@ -75,11 +81,11 @@ const Front = () => {
           </div>
           <div className="home_scroll">
             <a href="#about" className="home_scroll-button button-flex">
-              <i className="home_scroll-mouse">
+              <i className="home_scroll-mouse r_icons">
                 <CgMouse />
               </i>
               <span className="home_scroll-name">Scroll down</span>
-              <i className="home_scroll-arrow">
+              <i className="home_scroll-arrow r_icons">
                 <FiArrowDown />
               </i>
             </a>
