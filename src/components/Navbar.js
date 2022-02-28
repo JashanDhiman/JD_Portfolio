@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 //import { GoThreeBars } from "react-icons/go";
 import { ImCross } from "react-icons/im";
+import { FaBrain } from "react-icons/fa";
 //import { AiFillInstagram, AiFillGithub } from "react-icons/ai";
 import { BiHomeAlt, BiSend } from "react-icons/bi";
 import { AiOutlineUser, AiOutlineAppstore } from "react-icons/ai";
@@ -36,6 +37,18 @@ const Navbar = () => {
                   <AiOutlineUser />
                 </i>
                 About
+              </a>
+            </li>
+            <li className="nav_item">
+              <a
+                href="#skills"
+                className="nav_link"
+                onClick={() => linkAction()}
+              >
+                <i className="nav_icon r_icons">
+                  <FaBrain />
+                </i>
+                skills
               </a>
             </li>
             <li className="nav_item">
