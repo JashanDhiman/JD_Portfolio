@@ -1,4 +1,5 @@
 import Aboutme from "./components/Aboutme";
+import Contactme from "./components/Contactme";
 import Front from "./components/Front";
 import Navbar from "./components/Navbar";
 import Qualification from "./components/Qualification";
@@ -13,6 +14,7 @@ function App() {
       <Aboutme />
       <Skills />
       <Qualification />
+      <Contactme />
     </>
   );
 }

@@ -46,9 +46,9 @@ const Skills = () => {
               </i>
             </div>
             <div className="skills_list grid">
-              {front_skills_list.map((skill) => {
+              {front_skills_list.map((skill, index) => {
                 return (
-                  <div className="skillsdata">
+                  <div className="skillsdata" key={index}>
                     <div className="skills_titles">
                       <h3 className="skills_name">{skill.skill}</h3>
                       <span className="skills_number">{skill.percentage}</span>
@@ -86,9 +86,9 @@ const Skills = () => {
               </i>
             </div>
             <div className="skills_list grid">
-              {back_skills_list.map((skill) => {
+              {back_skills_list.map((skill, index) => {
                 return (
-                  <div className="skillsdata">
+                  <div className="skillsdata" key={index}>
                     <div className="skills_titles">
                       <h3 className="skills_name">{skill.skill}</h3>
                       <span className="skills_number">{skill.percentage}</span>
