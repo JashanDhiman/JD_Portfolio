@@ -15,18 +15,24 @@ const Front = () => {
             <div className="home_social">
               <a
                 href="https://github.com/JashanDhiman/"
+                target="_blank"
+                rel="noreferrer"
                 className="home_social-icon r_icons"
               >
                 <FiGithub />
               </a>
               <a
                 href="https://www.linkedin.com/in/jashan-dhiman-07aa3820b/"
+                target="_blank"
+                rel="noreferrer"
                 className="home_social-icon r_icons"
               >
                 <ImLinkedin2 />
               </a>
               <a
                 href="https://www.instagram.com/dhiman_jashan1/"
+                target="_blank"
+                rel="noreferrer"
                 className="home_social-icon r_icons"
               >
                 <BsInstagram />
@@ -65,8 +71,8 @@ const Front = () => {
               </svg>
             </div>
             <div className="home_data">
-              <h1 className="home_title">Hi, I'am Jashan</h1>
-              <h3 className="home_subtitle">Front-End Developer</h3>
+              <h1 className="home_title">Hi, I'am JD</h1>
+              <h3 className="home_subtitle">Web Developer</h3>
               <p className="home_description">
                 One year experience in Web Design and Knowledge, Producing
                 Quality Work.

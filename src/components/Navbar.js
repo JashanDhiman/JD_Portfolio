@@ -1,14 +1,28 @@
 import React, { useState } from "react";
 //import { GoThreeBars } from "react-icons/go";
 import { ImCross } from "react-icons/im";
-import { FaBrain } from "react-icons/fa";
+import { FaBrain, FaUserGraduate } from "react-icons/fa";
 //import { AiFillInstagram, AiFillGithub } from "react-icons/ai";
 import { BiHomeAlt, BiSend } from "react-icons/bi";
 import { AiOutlineUser, AiOutlineAppstore } from "react-icons/ai";
-import { BsBriefcase, BsReverseLayoutTextSidebarReverse } from "react-icons/bs";
+import {
+  //BsBriefcase,
+  //BsReverseLayoutTextSidebarReverse,
+  BsSun,
+  BsMoon,
+} from "react-icons/bs";
 
 const Navbar = () => {
+  var darkThemeVal =
+    localStorage.getItem("darkTheme") === "true" ? true : false;
+  document.body.classList[darkThemeVal ? "add" : "remove"]("dark-theme");
   const [showNav, setShowNav] = useState(false);
+  const [darkTheme, setDarkTheme] = useState(darkThemeVal);
+  const [activeContent, setActiveContent] = useState("#home");
+  const themeHandler = (bool) => {
+    setDarkTheme(bool);
+    localStorage.setItem("darkTheme", bool);
+  };
   /*==================== REMOVE MENU MOBILE ====================*/
   //const width = window.innerWidth;
   function linkAction() {
@@ -20,7 +34,14 @@ const Navbar = () => {
         <div className="nav_menu" id="nav-Menu">
           <ul className="nav_list grid">
             <li className="nav_item">
-              <a href="#home" className="nav_link" onClick={() => linkAction()}>
+              <a
+                href="#home"
+                className="nav_link"
+                style={{
+                  color: activeContent === "#home" ? "var(--first-color)" : "",
+                }}
+                onClick={() => linkAction() & setActiveContent("#home")}
+              >
                 <i className="nav_icon r_icons">
                   <BiHomeAlt />
                 </i>
@@ -31,7 +52,10 @@ const Navbar = () => {
               <a
                 href="#about"
                 className="nav_link"
-                onClick={() => linkAction()}
+                style={{
+                  color: activeContent === "#about" ? "var(--first-color)" : "",
+                }}
+                onClick={() => linkAction() & setActiveContent("#about")}
               >
                 <i className="nav_icon r_icons">
                   <AiOutlineUser />
@@ -43,7 +67,11 @@ const Navbar = () => {
               <a
                 href="#skills"
                 className="nav_link"
-                onClick={() => linkAction()}
+                style={{
+                  color:
+                    activeContent === "#skills" ? "var(--first-color)" : "",
+                }}
+                onClick={() => linkAction() & setActiveContent("#skills")}
               >
                 <i className="nav_icon r_icons">
                   <FaBrain />
@@ -51,35 +79,50 @@ const Navbar = () => {
                 skills
               </a>
             </li>
-            <li className="nav_item">
+            {/*<li className="nav_item">
               <a
                 href="#resume"
                 className="nav_link"
-                onClick={() => linkAction()}
+                style={{color:(activContent ==="#resume"?"var(--first-color)":"")}})
+                onClick={() => (linkAction()&setActiveContent("#resume"))}
               >
                 <i className="nav_icon r_icons">
                   <BsReverseLayoutTextSidebarReverse />
                 </i>
                 Resume
               </a>
-            </li>
+            </li>*/}
             <li className="nav_item">
               <a
-                href="#services"
+                href="#qualification"
                 className="nav_link"
-                onClick={() => linkAction()}
+                style={{
+                  color:
+                    activeContent === "#qualification"
+                      ? "var(--first-color)"
+                      : "",
+                }}
+                onClick={() =>
+                  linkAction() & setActiveContent("#qualification")
+                }
               >
                 <i className="nav_icon r_icons">
-                  <BsBriefcase />
+                  <FaUserGraduate />
                 </i>
-                Services
+                Qualification
+                {/*Services*/}
               </a>
             </li>
+            <li className="nav_item"></li>
             <li className="nav_item">
               <a
                 href="#contact"
                 className="nav_link"
-                onClick={() => linkAction()}
+                style={{
+                  color:
+                    activeContent === "#contact" ? "var(--first-color)" : "",
+                }}
+                onClick={() => linkAction() & setActiveContent("#contact")}
               >
                 <i className="nav_icon r_icons">
                   <BiSend />
@@ -99,9 +142,26 @@ const Navbar = () => {
       ) : (
         <nav className="nav container">
           <a href="/" className="nav_logo">
-            Jashan
+            JD
           </a>
           <div className="nav_btns">
+            {darkTheme ? (
+              <i
+                className="change-theme r_icons"
+                id="theme-button"
+                onClick={() => themeHandler(false)}
+              >
+                <BsMoon />
+              </i>
+            ) : (
+              <i
+                className="change-theme r_icons"
+                id="theme-button"
+                onClick={() => themeHandler(true)}
+              >
+                <BsSun />
+              </i>
+            )}
             <div
               className="nav_toggle r_icons"
               id="nav-Toggle"
