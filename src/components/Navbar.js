@@ -13,12 +13,12 @@ import {
 } from "react-icons/bs";
 
 const Navbar = () => {
+  var activeID = window.location.hash;
   var darkThemeVal =
     localStorage.getItem("darkTheme") === "true" ? true : false;
   document.body.classList[darkThemeVal ? "add" : "remove"]("dark-theme");
   const [showNav, setShowNav] = useState(false);
   const [darkTheme, setDarkTheme] = useState(darkThemeVal);
-  const [activeContent, setActiveContent] = useState("#home");
   const themeHandler = (bool) => {
     setDarkTheme(bool);
     localStorage.setItem("darkTheme", bool);
@@ -38,9 +38,9 @@ const Navbar = () => {
                 href="#home"
                 className="nav_link"
                 style={{
-                  color: activeContent === "#home" ? "var(--first-color)" : "",
+                  color: activeID === "#home" ? "var(--first-color)" : "",
                 }}
-                onClick={() => linkAction() & setActiveContent("#home")}
+                onClick={() => linkAction()}
               >
                 <i className="nav_icon r_icons">
                   <BiHomeAlt />
@@ -53,9 +53,9 @@ const Navbar = () => {
                 href="#about"
                 className="nav_link"
                 style={{
-                  color: activeContent === "#about" ? "var(--first-color)" : "",
+                  color: activeID === "#about" ? "var(--first-color)" : "",
                 }}
-                onClick={() => linkAction() & setActiveContent("#about")}
+                onClick={() => linkAction()}
               >
                 <i className="nav_icon r_icons">
                   <AiOutlineUser />
@@ -68,10 +68,9 @@ const Navbar = () => {
                 href="#skills"
                 className="nav_link"
                 style={{
-                  color:
-                    activeContent === "#skills" ? "var(--first-color)" : "",
+                  color: activeID === "#skills" ? "var(--first-color)" : "",
                 }}
-                onClick={() => linkAction() & setActiveContent("#skills")}
+                onClick={() => linkAction()}
               >
                 <i className="nav_icon r_icons">
                   <FaBrain />
@@ -98,13 +97,9 @@ const Navbar = () => {
                 className="nav_link"
                 style={{
                   color:
-                    activeContent === "#qualification"
-                      ? "var(--first-color)"
-                      : "",
+                    activeID === "#qualification" ? "var(--first-color)" : "",
                 }}
-                onClick={() =>
-                  linkAction() & setActiveContent("#qualification")
-                }
+                onClick={() => linkAction()}
               >
                 <i className="nav_icon r_icons">
                   <FaUserGraduate />
@@ -119,10 +114,9 @@ const Navbar = () => {
                 href="#contact"
                 className="nav_link"
                 style={{
-                  color:
-                    activeContent === "#contact" ? "var(--first-color)" : "",
+                  color: activeID === "#contact" ? "var(--first-color)" : "",
                 }}
-                onClick={() => linkAction() & setActiveContent("#contact")}
+                onClick={() => linkAction()}
               >
                 <i className="nav_icon r_icons">
                   <BiSend />
