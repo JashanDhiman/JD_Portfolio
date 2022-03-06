@@ -210,6 +210,7 @@ img {
   font-size: var(--small-font-size);
   color: var(--title-color);
   font-weight: var(--font-medium);
+  text-transform: uppercase;
 }
 .nav_link:hover {
   color: var(--first-color);
@@ -694,6 +695,9 @@ textarea {
   }
   .nav_menu {
     margin-left: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
   }
   .change-theme {
     margin: 0;

@@ -24,120 +24,113 @@ const Navbar = () => {
     localStorage.setItem("darkTheme", bool);
   };
   /*==================== REMOVE MENU MOBILE ====================*/
-  //const width = window.innerWidth;
+  const width = window.innerWidth;
   function linkAction() {
     setShowNav(false);
   }
+  const navItems = [
+    { title: "home", icon: <BiHomeAlt /> },
+    { title: "about", icon: <AiOutlineUser /> },
+    { title: "skills", icon: <FaBrain /> },
+    { title: "qualification", icon: <FaUserGraduate /> },
+    { title: "", icon: "" }, //{ title: "Resume", icon: <BsReverseLayoutTextSidebarReverse /> },
+    { title: "contact", icon: <BiSend /> },
+  ];
   return (
     <header className="header" id="header">
-      {showNav ? (
-        <div className="nav_menu" id="nav-Menu">
-          <ul className="nav_list grid">
-            <li className="nav_item">
-              <a
-                href="#home"
-                className="nav_link"
-                style={{
-                  color: activeID === "#home" ? "var(--first-color)" : "",
-                }}
-                onClick={() => linkAction()}
-              >
-                <i className="nav_icon r_icons">
-                  <BiHomeAlt />
+      {width < 768 ? (
+        showNav ? (
+          <div className="nav_menu" id="nav-Menu">
+            <ul className="nav_list grid">
+              {navItems.map((item, index) => {
+                return (
+                  <li className="nav_item" key={index}>
+                    <a
+                      href={`#${item.title}`}
+                      className="nav_link"
+                      style={{
+                        color:
+                          activeID === `#${item.title}`
+                            ? "var(--first-color)"
+                            : "",
+                      }}
+                      onClick={() => linkAction()}
+                    >
+                      <i className="nav_icon r_icons">{item.icon}</i>
+                      {item.title}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+            <i
+              className="nav_close r_icons"
+              id="nav-Close"
+              onClick={() => setShowNav(false)}
+            >
+              <ImCross />
+            </i>
+          </div>
+        ) : (
+          <nav className="nav container">
+            <a href="/" className="nav_logo">
+              JD
+            </a>
+            <div className="nav_btns">
+              {darkTheme ? (
+                <i
+                  className="change-theme r_icons"
+                  id="theme-button"
+                  onClick={() => themeHandler(false)}
+                >
+                  <BsMoon />
                 </i>
-                Home
-              </a>
-            </li>
-            <li className="nav_item">
-              <a
-                href="#about"
-                className="nav_link"
-                style={{
-                  color: activeID === "#about" ? "var(--first-color)" : "",
-                }}
-                onClick={() => linkAction()}
-              >
-                <i className="nav_icon r_icons">
-                  <AiOutlineUser />
+              ) : (
+                <i
+                  className="change-theme r_icons"
+                  id="theme-button"
+                  onClick={() => themeHandler(true)}
+                >
+                  <BsSun />
                 </i>
-                About
-              </a>
-            </li>
-            <li className="nav_item">
-              <a
-                href="#skills"
-                className="nav_link"
-                style={{
-                  color: activeID === "#skills" ? "var(--first-color)" : "",
-                }}
-                onClick={() => linkAction()}
+              )}
+              <div
+                className="nav_toggle r_icons"
+                id="nav-Toggle"
+                onClick={() => setShowNav(true)}
               >
-                <i className="nav_icon r_icons">
-                  <FaBrain />
-                </i>
-                skills
-              </a>
-            </li>
-            {/*<li className="nav_item">
-              <a
-                href="#resume"
-                className="nav_link"
-                style={{color:(activContent ==="#resume"?"var(--first-color)":"")}})
-                onClick={() => (linkAction()&setActiveContent("#resume"))}
-              >
-                <i className="nav_icon r_icons">
-                  <BsReverseLayoutTextSidebarReverse />
-                </i>
-                Resume
-              </a>
-            </li>*/}
-            <li className="nav_item">
-              <a
-                href="#qualification"
-                className="nav_link"
-                style={{
-                  color:
-                    activeID === "#qualification" ? "var(--first-color)" : "",
-                }}
-                onClick={() => linkAction()}
-              >
-                <i className="nav_icon r_icons">
-                  <FaUserGraduate />
-                </i>
-                Qualification
-                {/*Services*/}
-              </a>
-            </li>
-            <li className="nav_item"></li>
-            <li className="nav_item">
-              <a
-                href="#contact"
-                className="nav_link"
-                style={{
-                  color: activeID === "#contact" ? "var(--first-color)" : "",
-                }}
-                onClick={() => linkAction()}
-              >
-                <i className="nav_icon r_icons">
-                  <BiSend />
-                </i>
-                ContactMe
-              </a>
-            </li>
-          </ul>
-          <i
-            className="nav_close r_icons"
-            id="nav-Close"
-            onClick={() => setShowNav(false)}
-          >
-            <ImCross />
-          </i>
-        </div>
+                <AiOutlineAppstore />
+              </div>
+            </div>
+          </nav>
+        )
       ) : (
-        <nav className="nav container">
+        <div className="nav_menu" id="nav-Menu">
           <a href="/" className="nav_logo">
             JD
           </a>
+          <ul className="nav_list grid">
+            {navItems.map((item, index) => {
+              return (
+                <li className="nav_item" key={index}>
+                  <a
+                    href={`#${item.title}`}
+                    className="nav_link"
+                    style={{
+                      color:
+                        activeID === `#${item.title}`
+                          ? "var(--first-color)"
+                          : "",
+                    }}
+                    onClick={() => linkAction()}
+                  >
+                    <i className="nav_icon r_icons">{item.icon}</i>
+                    {item.title}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
           <div className="nav_btns">
             {darkTheme ? (
               <i
@@ -164,7 +157,7 @@ const Navbar = () => {
               <AiOutlineAppstore />
             </div>
           </div>
-        </nav>
+        </div>
       )}
     </header>
   );
